@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Londrina+Sketch&display=swap");
+
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Josefin Slab', serif;
+font-family: 'Londrina Sketch', cursive; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #9da9c47c;
+    display: flex;
+    flex-direction: column;
+}
+
+/* main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+footer {
+    width: 100vw;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer p {
+    color: #fcefe3;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: normal;
+    font-size: large;
+    padding: 10px;
+    margin-right: 20px;
+    text-shadow: #d1abb6 1px 1px 2px;
+}
+
+h1 {
+    font-family: "Londrina Sketch", cursive;
+    color: #72638f;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+/* LOGGED PUT AREA  */
+
+.welcomePage {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-content: center;
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.welcomePageBox {
+    background-color: white;
+    border-radius: 4px;
+    text-shadow: #d1abb6 2px 2px 4px;
+    width: 85vw;
+    height: 65vh;
+}
+
+/* .logoAndRegistration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    font-family: Comfortaa, cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: x-large;
+    width: 40vw;
+    background-color: #f07259cc;
+    box-shadow: black 2px 2px 4px;
+    border-radius: 20px;
+    padding: 10px;
+} */
+
+/* h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+} */
+/* 
+.logo img {
+    margin-left: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.registrationForm {
+    background-color: #77c9d8d7;
+    width: 40vw;
+    box-shadow: 2px 2px 4px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.registrationForm h2 {
+    font-family: Comfortaa, cursive;
+    font-weight: bolder;
+    color: black;
+}
+
+.registrationForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registrationForm input {
+    box-shadow: rgba(0, 0, 0, 0.494) 1px 1px 2px;
+    width: 280px;
+    height: 30px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 15px;
+    margin: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(236, 236, 236);
+    border-image: initial;
+}
+
+.registrationForm button {
+    box-shadow: black 1px 1px 2px;
+    width: 180px;
+    height: 30px;
+    background-color: whitesmoke;
+    font-family: Comfortaa, cursive;
+    font-weight: 700;
+    font-size: large;
+    border-radius: 15px;
+    margin: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-image: initial;
+}
+
+.backgroudImg {
+    width: 50vw;
+    object-fit: scale-down;
+}
+
+.pageDescription {
+    color: #252362;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: xx-large;
+    max-width: 40vw;
+} */
+
+.error {
+    color: red;
+    font-family: "Kanit", sans-serif;
+    font-style: italic;
+    max-width: 35vw;
+}
+
+/* .loginAndRegisterIcon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 6px;
+    font-family: Comfortaa, cursive;
+    font-weight: 700;
+    color: black;
+    text-decoration-line: none;
+    box-shadow: black 1px 1px 2px;
+} */
+
+/* .resetLink {
+    font-family: "Kanit", sans-serif;
+    font-style: italic;
+    padding: 5px;
+    font-weight: lighter;
+    /* font-size: larger; */
+/* color: black;
+} */
+
+/* LOGEDED AREA */
+.navAndLogoBar {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f07259cc;
+    box-shadow: rgba(0, 0, 0, 0.377) 2px 2px 4px;
+}
+
+.navAndLogoBar nav {
+    margin-left: 20vw;
+    align-self: flex-end;
+}
+
+.navAndLogoBar nav .navLink button {
+    font-family: "Comfortaa", cursive;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 5px 5px 0 0;
+    width: 120px;
+    height: 35px;
+    background-color: #f0725900;
+    border: 1px solid #f0725900;
+    box-shadow: rgba(0, 0, 0, 0.226) 2px 0 2px 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.navAndLogoBar nav .navLink button:hover {
+    width: 120px;
+    height: 35px;
+    font-size: medium;
+}
+
+.navAndLogoBar nav .navLink img {
+    transform: rotate(-25deg);
+    margin-left: 5px;
+}
+
+.logoLogededPage {
+    font-family: Comfortaa, cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: small;
+
+    padding: 10px;
+}
+
+.logoLogededPage img {
+    max-height: 8vh;
+}
+
+.logoLogededPage h1 {
+    margin-top: 30px;
+}
+/* .mainSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 13vh;
+} */
+.sideBar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 97vh;
+    /* min-width: 12vw; */
+    width: 15vw;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #77cad8;
+    box-shadow: rgba(0, 0, 0, 0.377) 2px 2px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sideBar h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: x-large;
+    padding: 10px;
+}
+
+.sideBar .profilePic {
+    object-fit: cover;
+    width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.788) 2px 2px 4px;
+    margin-top: 20px;
+}
+
+.kidsCount {
+    display: flex;
+    flex-direction: row;
+}
+
+.kidsCount img {
+    margin: 5px;
+    width: 23px;
+    height: 23px;
+}
+
+.kidsCount p {
+    font-family: Comfortaa, cursive;
+    font-size: medium;
+    padding: 8px;
+}
+.bio {
+    font-family: Comfortaa, cursive;
+    font-size: medium;
+    padding: 10px;
+}
+.editBioButton {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: Comfortaa, cursive;
+    font-weight: 300;
+    font-size: small;
+    color: black;
+    text-decoration-line: none;
+    box-shadow: rgba(0, 0, 0, 0.589) 1px 1px 2px;
+}
+
+/* MODAL */
+
+.modalShadow {
+    z-index: 2;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    z-index: 3;
+    height: 70vh;
+    width: 50vw;
+    background-color: #f5e6cc;
+    box-shadow: 2px rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.modalInner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Comfortaa", cursive;
+    height: 60vh;
+    width: 50vw;
+}
+
+.modalInner form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-items: center;
+}
+
+.modalInner input {
+    padding: 3px;
+    margin: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.445);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.589) 1px 1px 2px;
+    height: 30px;
+    width: 300px;
+}
+
+.modalInner textarea {
+    height: 60px;
+    margin: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.445);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.589) 1px 1px 2px;
+    width: 300px;
+}
+
+.modalInner button {
+    box-shadow: black 1px 1px 2px;
+    width: 280px;
+    height: 30px;
+    background-color: whitesmoke;
+    font-family: Comfortaa, cursive;
+    font-weight: 700;
+    font-size: large;
+    border-radius: 15px;
+    margin: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-image: initial;
+}
+.kidsCountContainer {
+    display: flex;
+    flex-direction: row;
+}
+.kidsCountForm {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.kidsCountForm img {
+    padding: 4px;
+    width: 28px;
+    height: 28px;
+}
+
+.kidsCountForm input {
+    padding: 4px;
+    height: 28px;
+    width: 38px;
+}
+
+.modalContainer aside {
+    cursor: pointer;
+    z-index: 3;
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: "Comfortaa", cursive;
+    padding: 3px 5px;
+}
+.modalContainer h2 {
+    padding: 20px;
+}
+
+.modalContainer form {
+    padding: 30px;
+}
+
+/* dynamicContent  */
+
+.dynamicContent {
+    margin-left: 17vw;
+    margin-top: 13vh;
+}
+
+.dynamicContent h2 {
+    font-family: "Comfortaa", cursive;
+    color: black;
+    font-size: x-large;
+    font-weight: 700;
+    padding: 20px;
+}
+
+.dynamicContent form {
+    padding: 10px 20px;
+}
+.dynamicContent input {
+    border: 1px solid rgba(0, 0, 0, 0.445);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.589) 1px 1px 2px;
+    height: 30px;
+    width: 300px;
+}
+
+.dynamicContent h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: black;
+    font-size: larger;
+    font-weight: 100;
+    padding: 10px 20px;
+}
+
+/* USERS SEARCH */
+
+.usersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.userContainer {
+    padding: 10px;
+    width: 220px;
+    height: 240px;
+}
+
+.usersGrid img {
+    object-fit: cover;
+    width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.788) 2px 2px 4px;
+}
+
+.usersGrid p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    text-align: center;
+    padding: 5px;
+}
+
+/* THE OTHER USER PROFILE  */
+
+.theOtherUSerContainer {
+    position: absolute;
+    right: 10px;
+}
+
+.theOtherUSerContainer p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    padding: 20px;
+}
+
+.theOtherUserInner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.theOtherUserInner h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 150;
+    font-size: xx-large;
+    padding: 20px;
+}
+
+.theOtherUserInner img {
+    object-fit: cover;
+    width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.788) 2px 2px 4px;
+}
+
+/* MY FRIENDS */
+
+.myFriendsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 180px));
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.myFriendsContainer {
+    padding: 10px;
+    width: 180px;
+    height: 180px;
+}
+
+.myFriendsContainer img {
+    object-fit: cover;
+    width: 120px;
+    min-height: 100px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.788) 2px 2px 4px;
+}
+
+.myFriendsContainer p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    text-align: center;
+    padding: 5px;
+}
+
+/* CHAT */
+
+.chatContainer {
+    width: 40vw;
+    height: 80vh;
+    border: 1px #f07259 solid;
+    border-radius: 15px;
+    box-shadow: #77c9d8c9 2px 2px 4px;
+}
+
+.messagesContainer {
+    width: 39vw;
+    height: 71vh;
+    margin: 5px 5px 0 5px;
+    overflow: scroll;
+    border-radius: 15px;
+}
+
+.eachMsgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.eachMsgContainer img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: #77c9d8c9 2px 2px 4px;
+}
+
+.textMsgContainer {
+    text-align: end;
+    max-width: 35vw;
+}
+
+.textMsg {
+    font-family: "Kanit", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: lighter;
+    max-width: 35vw;
+    word-wrap: break-word;
+}
+
+.sender {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: xx-small;
+    color: black;
+}
+
+.chatForm {
+    text-align: end;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.sendBtn {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 80px;
+    height: 30px;
+    font-family: Comfortaa, cursive;
+    background-color: #f0725986;
+    border: 1px solid #f0725986;
+    font-weight: 900;
+    color: black;
+    text-decoration-line: none;
+    box-shadow: #77c9d8c9 2px 2px 4px;
+}
+
+/* FIRST PAGE  */
+
+.quotes {
+    font-family: "Kanit", sans-serif;
+    font-style: italic;
+    color: black;
+    font-weight: 100;
+    font-size: larger;
+    text-align: center;
+}

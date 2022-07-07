@@ -1,0 +1,822 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Londrina+Sketch&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* font-family: 'Fredericka the Great', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Josefin Slab', serif;
+
+font-family: 'Londrina Sketch', cursive;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-family: 'Roboto Slab', serif; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    width: 100vw;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    /* background-color: #f788884d; */
+}
+
+footer p {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: normal;
+    font-size: large;
+    padding: 10px;
+    margin-right: 20px;
+    color: #477ca5;
+    text-shadow: #f78888 2px 2px 4px;
+}
+
+/* LOOGED OUT PAGES  */
+
+.welcomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcomePageLog {
+    font-family: "Fredericka the Great", cursive;
+    background-color: transparent;
+    color: #f78888;
+    font-size: 60px;
+    font-weight: bolder;
+    text-shadow: #90ccf4 2px 2px 4px;
+}
+
+.welcomePageBoxImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100vw;
+    z-index: -1;
+}
+
+.loginAndRegisterIcons {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.loginIcon {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+.registerIcon {
+    height: 50px;
+    padding: 10px;
+}
+
+.welcomePageAnimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1vw;
+    top: 8vh;
+    width: 250px;
+    height: 250px;
+    background-color: #f3d2504f;
+    clip-path: circle(50% at 50% 50%);
+    animation: clips 3s ease infinite;
+}
+
+@keyframes clips {
+    50% {
+        clip-path: circle(46.7% at 50% 50%);
+    }
+}
+
+.welcomePageDescription {
+    transform: rotate(18deg);
+    text-align: center;
+    width: 200px;
+    height: fit-content;
+    font-size: medium;
+    font-family: "Roboto Slab", serif;
+    z-index: 1;
+    color: #c26060;
+    text-shadow: #ececec 2px 2px 4px;
+}
+
+.welcomePageForm {
+    margin-top: 27vh;
+    width: 30vw;
+    height: fit-content;
+    padding: 20px;
+    background-color: #90ccf45d;
+    box-shadow: #c26060 2px 2px 4px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    transition: transform 1s;
+}
+.welcomePageForm form {
+    display: flex;
+    flex-direction: column;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.welcomePageForm input {
+    margin: 10px;
+    width: 250px;
+    height: 35px;
+    box-shadow: #c26060 2px 2px 4px;
+    background-color: #ecececdc;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+}
+
+.welcomePageFormTittle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #ececec;
+    font-size: xx-large;
+    text-shadow: #c26060 2px 2px 4px;
+    text-align: center;
+}
+
+.welcomePageFormButton {
+    margin: 10px;
+    width: 250px;
+    height: 35px;
+    background-color: #b45e5ee3;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    color: #ececec;
+    font-size: medium;
+    box-shadow: #f3d250 2px 2px 4px;
+}
+
+.resetLink {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    color: #c26060;
+    text-shadow: white 2px 2px 4px;
+}
+
+.error {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bolder;
+    color: red;
+    text-shadow: white 1px 1px 2px;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* APP PAGE  */
+.headerApp {
+    width: 80vw;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.appLogo {
+    margin-left: 10px;
+    font-family: "Fredericka the Great", cursive;
+    background-color: transparent;
+    color: #f78888;
+    font-size: 78px;
+    font-weight: bolder;
+    text-shadow: #90ccf4 2px 2px 4px;
+}
+
+/* NAV BAR  */
+
+.navBarApp {
+    padding-right: 15px;
+    width: 83vw;
+    height: 35px;
+    background-color: #f7888849;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: #90ccf4ab 2px 2px 4px;
+}
+.navBarApp img {
+    height: 30px;
+    margin: 0 20px;
+    opacity: 80%;
+}
+
+.navBarApp img:hover {
+    height: 34px;
+}
+
+/* SIDE BAR` */
+
+.sideBar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15vw;
+    height: 100%;
+    background-color: #f788884d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sideBarProfilePic {
+    object-fit: cover;
+    width: 190px;
+    min-height: 190px;
+    max-height: 280px;
+    box-shadow: #f788889d 2px 2px 4px 1px;
+    margin: 10px;
+}
+
+.sideBarUserName {
+    margin: 15px 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    font-size: xx-large;
+    text-shadow: #90ccf4cb 2px 2px 4px;
+    text-align: center;
+}
+
+.kidsCountRow {
+    margin: 6px 0;
+    width: 14vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.kidsCount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kidsCount img {
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.kidsCount p {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: medium;
+    padding: 8px;
+    font-weight: bolder;
+    color: #252362e5;
+}
+
+.sideBarP {
+    margin: 6px 0;
+    font-family: "Roboto Slab", serif;
+    padding: 8px;
+    color: #252362e5;
+    font-size: medium;
+}
+
+.editProfileButton {
+    margin: 10px 0;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: #f78888ce;
+    border: 1px solid #f78888;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ececec;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
+
+/* MODAL - CHANGE PICTURE AND EDIT PROFILE */
+
+.modalShadow {
+    z-index: 2;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    z-index: 3;
+    height: 70vh;
+    width: 50vw;
+    background-color: #ebd890ec;
+    box-shadow: #f78888 2px 2px 4px;
+    border-radius: 10px;
+    /* transition: ease-in-out 10s; */
+}
+
+aside {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf49d;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+    z-index: 3;
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+}
+
+.modalTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf49d;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.modalInner {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    width: 50vw;
+}
+
+.modalKidsCountRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ececec;
+    border-radius: 5px;
+    box-shadow: #f78888 2px 2px 4px;
+    justify-content: center;
+    width: 340px;
+}
+
+.modalKidsCountForm img {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+.modalKidsCountForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.KidsCountInput {
+    margin: 5px;
+    height: 28px;
+    width: 38px;
+    border: transparent;
+    box-shadow: #f78888 2px 2px 4px;
+}
+
+.modalInner p {
+    margin: 7px;
+    font-family: "Roboto Slab", serif;
+    padding: 8px;
+    color: #252362e5;
+    font-size: large;
+}
+
+.modalInner label {
+    margin: 7px;
+    font-family: "Roboto Slab", serif;
+    color: #252362e5;
+    font-size: large;
+}
+
+.modalInner form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 55vh;
+}
+
+.modalInput {
+    padding: 3px;
+    border: transparent;
+    box-shadow: #f78888 2px 2px 4px;
+    height: 30px;
+    width: 300px;
+}
+
+.modalInner textarea {
+    height: 60px;
+    border: transparent;
+    box-shadow: #f78888 2px 2px 4px;
+    width: 300px;
+}
+
+.modalInner button {
+    margin: 10px 0;
+    width: 270px;
+    height: 40px;
+    text-align: center;
+    background-color: #f78888ce;
+    border: 1px solid #f78888;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ececec;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
+
+/* NAV PAGES */
+
+.navPages {
+    position: absolute;
+    left: 0;
+    top: 195px;
+    width: 83vw;
+    height: 70vh;
+    border: transparent;
+    box-shadow: #5da1d56c 2px 2px 4px;
+    overflow: scroll;
+}
+
+/* HOME */
+
+.quotes {
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-style: italic;
+    font-size: x-large;
+    margin: 30px 30px 0 30px;
+    text-shadow: #f788886c 1px 1px 2px;
+    font-weight: normal;
+}
+
+.homeFriendsReqTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf4c5 1px 1px 2px;
+    font-size: x-large;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.homeFriendsReqGrid {
+    margin: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 240px));
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.homeFriendsReqContainer {
+    margin: 20px;
+    width: 220px;
+    height: 250px;
+}
+
+.homeFriendsReqContainer img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 4px;
+}
+
+.homeFriendsReqP {
+    font-family: "Roboto Slab", serif;
+    padding: 5px;
+    color: #252362e5;
+    font-size: medium;
+    text-decoration-line: none;
+    text-align: center;
+}
+
+.homeFriendsReqContainer a {
+    text-decoration-line: none;
+}
+
+.homeFriendsReqButton {
+    margin: 5px 0;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background-color: #f7888836;
+    border: transparent;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: small;
+    color: #f78888;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
+
+.homeFriendsReqCount {
+    /* text-align: center; */
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-size: medium;
+    margin-top: 30px;
+    margin-left: 40px;
+    text-shadow: #f788886c 1px 1px 2px;
+    font-weight: normal;
+}
+
+/* FRIENDS AND SERACH PAGE */
+
+.friendsTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf4c5 1px 1px 2px;
+    font-size: x-large;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.myFriendsGrid {
+    margin: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 220px));
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.myFriendsContainer {
+    margin: 20px;
+    width: 200px;
+    height: 250px;
+}
+
+.myFriendsContainer img {
+    object-fit: cover;
+    width: 190px;
+    height: 190px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 4px;
+}
+
+.myFriendsContainerP {
+    font-family: "Roboto Slab", serif;
+    padding: 5px;
+    color: #252362e5;
+    font-size: medium;
+    text-decoration-line: none;
+    text-align: center;
+}
+
+.myFriendsContainer a {
+    text-decoration-line: none;
+}
+
+.myFriendsContainerButton {
+    margin: 5px 0;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background-color: #f7888836;
+    border: transparent;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: small;
+    color: #f78888;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
+
+.recentJoinedTitle {
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-style: italic;
+    font-size: x-large;
+    margin: 30px 30px 0 30px;
+    text-shadow: #f788886c 1px 1px 2px;
+    font-weight: normal;
+}
+
+.seachForm input {
+    padding: 10px;
+    border: transparent;
+    box-shadow: #f78888 2px 2px 4px;
+    height: 30px;
+    width: 300px;
+    margin: 30px 30px 0 30px;
+}
+
+/* CHAT */
+.chatPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chatTitleandDescriptionContainer {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.chatTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf4c5 1px 1px 2px;
+    font-size: xx-large;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.chatDescription {
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-size: large;
+    margin-top: 30px;
+    margin-left: 40px;
+    text-shadow: #f788886c 1px 1px 2px;
+    font-weight: normal;
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+}
+
+.messagesContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 65vh;
+}
+
+.singleMsgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.singleMsgContainerImg {
+    width: 50px;
+    height: 50px;
+    object-fit: scale-down;
+}
+
+.textMsgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: end;
+    margin: 2px 10px 2px 10px;
+}
+
+.textMsg {
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-size: large;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.sender {
+    font-family: "Roboto Slab", serif;
+    color: #252362e5;
+    font-size: small;
+    font-style: italic;
+}
+.chatForm {
+    text-align: end;
+}
+.chatForm input {
+    background-color: #f7888844;
+    border: transparent;
+    box-shadow: #f78888 2px 2px 4px;
+    height: 30px;
+    width: 450px;
+    margin: 5px 15px 5px 15px;
+}
+
+.sendBtn {
+    margin: 5px 15px 5px 15px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: #f78888d0;
+    border: transparent;
+    border-radius: 5px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ececec;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
+
+/* OTHER USER PROFILE  */
+.theOtherUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+.theOtherUserInner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    /* justify-content: space-around; */
+}
+
+.theOtherUserInner img {
+    object-fit: cover;
+    width: 190px;
+    min-height: 190px;
+    max-height: 280px;
+    box-shadow: #f788889d 2px 2px 4px 1px;
+    margin: 10px 0 15px 40px;
+}
+
+.theOtherUserInner h1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #f78888;
+    text-shadow: #90ccf4c5 1px 1px 2px;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.otherUserKidsCount {
+    margin: 5px 0 5px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.otherUserKidsCountContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.otherUserKidsCount img {
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+}
+
+.otherUserKidsCount p {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: large;
+    padding: 8px;
+    font-weight: bolder;
+    color: #252362e5;
+}
+
+.otherUserText {
+    font-family: "Josefin Sans", sans-serif;
+    color: #252362e5;
+    font-size: large;
+    margin: 8px 0 8px 45px;
+    font-weight: bold;
+}
+
+.theOtherUserFriendButton {
+    margin: 5px 0 0 40px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background-color: #f7888836;
+    border: transparent;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: small;
+    color: #f78888;
+    text-decoration-line: none;
+    box-shadow: #90ccf4c5 2px 2px 4px;
+}
