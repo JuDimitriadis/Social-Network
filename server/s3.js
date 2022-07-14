@@ -8,8 +8,8 @@ if (process.env.NODE_ENV == "production") {
 }
 
 const s3 = new aws.S3({
-    accessKeyId: secrets.aws.key,
-    secretAccessKey: secrets.aws.secret,
+    accessKeyId: secrets.key,
+    secretAccessKey: secrets.secret,
 });
 
 const fs = require("fs");
