@@ -132,7 +132,7 @@ app.post("/reset-password", (req, res) => {
 // API SERVING => app.js
 app.get("/api/get-user/data", (req, res) => {
     database.getUserById(req.session.id).then((result) => {
-        console.log("user data", result);
+        // console.log("user data", result);
         return res.json(result);
     });
 });
@@ -177,9 +177,9 @@ app.delete("/api/upload-profile-pic", (req, res) => {
 
 //API SERVING profileModal.js
 app.post("/api/update-profile", (req, res) => {
-    console.log("req.body     ", req.body);
+    console.log("req.body PROFILE UPDATE    ", req.body);
     database.updateProfile(req.body, req.session.id).then((result) => {
-        console.log("result from db update", result);
+        console.log("result from db UPDATE", result);
         res.json(result);
     });
 });
