@@ -132,7 +132,7 @@ app.post("/reset-password", (req, res) => {
 // API SERVING => app.js
 app.get("/api/get-user/data", (req, res) => {
     database.getUserById(req.session.id).then((result) => {
-        // console.log("user data", result);
+        console.log("user data", result);
         return res.json(result);
     });
 });

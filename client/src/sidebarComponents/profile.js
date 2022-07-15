@@ -31,6 +31,8 @@ export default function Profile({
         setShowBioModal(!showBioModal);
     }
 
+    useEffect(() => console.log("profile first_name", first_name));
+
     return (
         <>
             <img

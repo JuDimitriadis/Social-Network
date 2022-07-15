@@ -62,7 +62,7 @@ export default class App extends Component {
                     email: data.email,
                 });
 
-                console.log("state id", this.state.id);
+                console.log("state id", this.state);
                 return;
             });
     }
