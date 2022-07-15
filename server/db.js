@@ -151,7 +151,23 @@ function updateProfile(
     { newBoy, newGirl, newOn_the_way, newFrom_country, newLive_city, newBio },
     id
 ) {
-    console.log("UPDATE PROFILE DB CALLED");
+    console.log(
+        "UPDATE PROFILE DB CALLED",
+        "newBoy",
+        newBoy,
+        "newGirl",
+        newGirl,
+        "newOn_the_way",
+        newOn_the_way,
+        "newFrom_country",
+        newFrom_country,
+        "newLive_city",
+        newLive_city,
+        "newBio",
+        newBio,
+        "ID",
+        id
+    );
     return db
         .query(
             `INSERT INTO profiles (boy, girl, on_the_way, from_country, live_city, bio, user_id)
