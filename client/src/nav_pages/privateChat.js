@@ -121,7 +121,7 @@ export default function PrivateChat({ friendStatus, id, theOderUserID }) {
                                             className="singleMsgContainerImg"
                                             src={
                                                 msg.profile_picture_url ||
-                                                `https://avatars.dicebear.com/api/big-smile/${msg.first_name}.svg`
+                                                `https://avatars.dicebear.com/api/big-smile/female/${msg.first_name}.svg`
                                             }
                                         />
                                     </Link>

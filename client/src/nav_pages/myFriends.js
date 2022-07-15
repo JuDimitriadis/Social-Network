@@ -87,7 +87,7 @@ export default function MyFriends({ id }) {
                                     <img
                                         src={
                                             user.profile_picture_url ||
-                                            `https://avatars.dicebear.com/api/big-smile/${user.first_name}.svg`
+                                            `https://avatars.dicebear.com/api/big-smile/female/${user.first_name}.svg`
                                         }
                                     />
                                     <p className="myFriendsContainerP">
@@ -115,7 +115,7 @@ export default function MyFriends({ id }) {
                                     <img
                                         src={
                                             user.profile_picture_url ||
-                                            `https://avatars.dicebear.com/api/big-smile/${user.first_name}.svg`
+                                            `https://avatars.dicebear.com/api/big-smile/female/${user.first_name}.svg`
                                         }
                                     />
                                     <p className="myFriendsContainerP">
@@ -148,7 +148,7 @@ export default function MyFriends({ id }) {
                                     <img
                                         src={
                                             user.profile_picture_url ||
-                                            `https://avatars.dicebear.com/api/big-smile/${user.first_name}.svg`
+                                            `https://avatars.dicebear.com/api/big-smile/female/${user.first_name}.svg`
                                         }
                                     />
                                     <p className="myFriendsContainerP">

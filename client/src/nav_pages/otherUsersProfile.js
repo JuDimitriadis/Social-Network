@@ -59,7 +59,7 @@ export default function OtherUsersProfile(id) {
                         <img
                             src={
                                 picUrl ||
-                                `https://avatars.dicebear.com/api/big-smile/${first_name}.svg`
+                                `https://avatars.dicebear.com/api/big-smile/female/${first_name}.svg`
                             }
                         />{" "}
                         <h1>
