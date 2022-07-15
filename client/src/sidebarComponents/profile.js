@@ -39,7 +39,7 @@ export default function Profile({
                 alt={"Profile Picture from" + { first_name } + { last_name }}
                 src={
                     url ||
-                    `https://avatars.dicebear.com/api/big-smile/${first_name}.svg`
+                    `https://avatars.dicebear.com/api/big-smile/female/${first_name}.svg`
                 }
             />
             <h1 className="sideBarUserName">

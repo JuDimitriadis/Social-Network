@@ -46,6 +46,7 @@ export default class App extends Component {
                 return result.json();
             })
             .then((data) => {
+                console.log("app data", data);
                 this.setState({
                     first_name: data.first_name,
                     last_name: data.last_name,
