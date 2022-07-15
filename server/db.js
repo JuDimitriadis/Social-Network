@@ -173,7 +173,7 @@ function updateProfile(
             `INSERT INTO profiles (boy, girl, on_the_way, from_country, live_city, bio, user_id)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
     ON CONFLICT (user_id)
-    DO UPDATE SET boy = $1, girl = $2, on_the_way = $3, from_country = $4, live_city= $5, bio=$6, user_id=$7
+    DO UPDATE SET boy = $1, girl = $2, on_the_way = $3, from_country = $4, live_city= $5, bio=$6 WHERE user_id=$7
     RETURNING * `,
             [
                 newBoy,
