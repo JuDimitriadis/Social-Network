@@ -8,13 +8,13 @@ Click *[here](https://theexpatmom.herokuapp.com/)* to check the live page.
 
 ## Functionalities
 
-- Login, Registration and Forget Password
+- Login, Registration and, Forget Password
 - Set and Update Profile
 - Upload or delete Profile Picture
 - Search for users by Name
 - Send and Accept friendship request
-- See other users profile
-- See 'My Friends' and 'Friendship Request' list (According to the Spiced Program, this was the only component supossed to be build using Redux)
+- See other users' profile
+- See 'My Friends' and 'Friendship Request' list (According to the Spiced Program, this was the only component supposed to be built using Redux)
 - Public and Private Chat
 
 
