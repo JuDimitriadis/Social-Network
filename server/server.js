@@ -354,16 +354,18 @@ io.on("connection", async (socket) => {
     }
 
     socket.on("newMsg", (msg) => {
-        // console.log("newMsg server ", msg);
+        console.log("newMsg server ", msg);
         database
             .createPublicChatMessage(socket.request.session.id, msg)
             .then((result) => {
+                console.log("newMsg result ", msg);
+
                 io.emit("newSavedMsg", result);
             });
     });
 
     socket.on("newPrivateMsg", (msg) => {
-        // console.log("newMsg server ", msg);
+        console.log("newMsg server ", msg);
         database
             .createPrivateChatMessage(
                 msg,
@@ -371,6 +373,8 @@ io.on("connection", async (socket) => {
                 socket.handshake.auth.theOderUserID
             )
             .then((result) => {
+                console.log("newMsg result ", msg);
+
                 io.emit("newSavedPrivateMsg", result);
             });
     });

@@ -329,6 +329,7 @@ function findUsers(searchValue, id) {
 findUsers("Ha", 2);
 
 function createPublicChatMessage(sender_id, text) {
+    console.log("createPublicChatMessage called");
     return db
         .query(
             `INSERT INTO public_chat_messages (sender_id, text) 
@@ -337,6 +338,7 @@ function createPublicChatMessage(sender_id, text) {
             [sender_id, text]
         )
         .then((result) => {
+            console.log("createPublicChatMessage result", result);
             return db.query(
                 `SELECT public_chat_messages.id, public_chat_messages.sender_id, public_chat_messages.text, public_chat_messages.created_at, users.first_name, users.last_name, users.profile_picture_url
             FROM public_chat_messages
@@ -350,6 +352,7 @@ function createPublicChatMessage(sender_id, text) {
 }
 
 function createPrivateChatMessage(msg, senderId, recipientId) {
+    console.log("createPrivateChatMessage called");
     console.log("new private msg", msg, senderId, recipientId);
     return db
         .query(
@@ -359,7 +362,7 @@ RETURNING *`,
             [msg, senderId, recipientId]
         )
         .then((result) => {
-            console.log("insert result", result);
+            console.log("createPrivateChatMessage result", result);
             return db.query(
                 `SELECT private_chat_messages.id, private_chat_messages.sender_id, private_chat_messages.recipient_id, private_chat_messages.text, private_chat_messages.created_at, users.first_name, users.last_name, users.profile_picture_url 
                 FROM private_chat_messages 
