@@ -14,7 +14,7 @@ if (process.env.DATABASE_URL) {
     db = spicedPg(
         `postgres:${DATABASE_USER}:${DATABASE_PASSWORD}@localhost:5432/${DATABASE_NAME}`
     );
-    console.log(`[db] Connecting to: ${DATABASE_NAME}`);
+    // console.log(`[db] Connecting to: ${DATABASE_NAME}`);
 }
 
 function hashPassword(password) {
@@ -151,23 +151,6 @@ function updateProfile(
     { newBoy, newGirl, newOn_the_way, newFrom_country, newLive_city, newBio },
     id
 ) {
-    console.log(
-        "UPDATE PROFILE DB CALLED",
-        "newBoy",
-        newBoy,
-        "newGirl",
-        newGirl,
-        "newOn_the_way",
-        newOn_the_way,
-        "newFrom_country",
-        newFrom_country,
-        "newLive_city",
-        newLive_city,
-        "newBio",
-        newBio,
-        "ID",
-        id
-    );
     return db
         .query(
             `INSERT INTO profiles (boy, girl, on_the_way, from_country, live_city, bio, user_id)
@@ -191,7 +174,6 @@ function updateProfile(
 }
 
 function checkFriendshipStatus(id, otherUserId) {
-    // console.log("db call", id, otherUserId);
     return db
         .query(
             `SELECT * FROM friendships
@@ -200,13 +182,11 @@ function checkFriendshipStatus(id, otherUserId) {
             [id, otherUserId]
         )
         .then((result) => {
-            // console.log("db result", result.rows[0]);
             return result.rows[0];
         });
 }
 
 function getFriendshipRequests(id) {
-    // console.log("db call", id, otherUserId);
     return db
         .query(
             `SELECT users.id, users.first_name, users.last_name, users.profile_picture_url, 
@@ -218,13 +198,11 @@ function getFriendshipRequests(id) {
             [id]
         )
         .then((result) => {
-            // // console.log("db result", result.rows[0]);
             return result.rows;
         });
 }
 
 function deleteFriendRequest(id, otherUserId) {
-    // console.log("db call", id, otherUserId);
     return db
         .query(
             `DELETE FROM friendships
@@ -272,7 +250,6 @@ function getFriendsAndRequests(id) {
             [id]
         )
         .then((result) => {
-            console.log("db result", result.rows);
             return result.rows;
         });
 }
@@ -315,7 +292,6 @@ function findNewestUsers(id) {
 }
 
 function findUsers(searchValue, id) {
-    console.log("searchValue + %", searchValue + "%");
     return db
         .query(
             `SELECT * FROM users
@@ -329,7 +305,6 @@ function findUsers(searchValue, id) {
 findUsers("Ha", 2);
 
 function createPublicChatMessage(sender_id, text) {
-    console.log("createPublicChatMessage called");
     return db
         .query(
             `INSERT INTO public_chat_messages (sender_id, text) 
@@ -338,7 +313,6 @@ function createPublicChatMessage(sender_id, text) {
             [sender_id, text]
         )
         .then((result) => {
-            console.log("createPublicChatMessage result", result);
             return db.query(
                 `SELECT public_chat_messages.id, public_chat_messages.sender_id, public_chat_messages.text, public_chat_messages.created_at, users.first_name, users.last_name, users.profile_picture_url
             FROM public_chat_messages
@@ -352,8 +326,6 @@ function createPublicChatMessage(sender_id, text) {
 }
 
 function createPrivateChatMessage(msg, senderId, recipientId) {
-    console.log("createPrivateChatMessage called");
-    console.log("new private msg", msg, senderId, recipientId);
     return db
         .query(
             `INSERT INTO private_chat_messages (text, sender_id, recipient_id ) 
@@ -362,7 +334,6 @@ RETURNING *`,
             [msg, senderId, recipientId]
         )
         .then((result) => {
-            console.log("createPrivateChatMessage result", result);
             return db.query(
                 `SELECT private_chat_messages.id, private_chat_messages.sender_id, private_chat_messages.recipient_id, private_chat_messages.text, private_chat_messages.created_at, users.first_name, users.last_name, users.profile_picture_url 
                 FROM private_chat_messages 
@@ -388,7 +359,6 @@ function getPublicChatMessages() {
 }
 
 function getPrivateMessages(idOne, idTwo) {
-    console.log("get private msg DB", idOne, idTwo);
     return db
         .query(
             `SELECT private_chat_messages.id, private_chat_messages.sender_id, private_chat_messages.recipient_id, private_chat_messages.text, private_chat_messages.created_at, users.first_name, users.last_name, users.profile_picture_url 
@@ -401,7 +371,6 @@ function getPrivateMessages(idOne, idTwo) {
             [idOne, idTwo]
         )
         .then((result) => {
-            console.log("get private msg DB result", result);
             return result.rows;
         });
 }
