@@ -169,6 +169,13 @@ app.delete("/api/upload-profile-pic", (req, res) => {
 });
 
 //API SERVING profileModal.js
+// app.get("/api/get-countries-list", (req, res) => {
+//     database.getCountriesList().then((result) => {
+//         res.json(result);
+//     });
+// });
+
+//API SERVING profileModal.js
 app.post("/api/update-profile", (req, res) => {
     console.log("req.body PROFILE UPDATE    ", req.body);
     database.updateProfile(req.body, req.session.id).then((result) => {
@@ -299,10 +306,6 @@ app.get("/api/get-friendsReq", (req, res) => {
     });
 });
 
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "..", "client", "index.html"));
-});
-
 const io = require("socket.io")(server, {
     allowRequest: (request, callback) =>
         callback(
@@ -313,7 +316,7 @@ const io = require("socket.io")(server, {
 let privateChatUsers;
 
 io.use((socket, next) => {
-    console.log("IO.USE", socket, next);
+    console.log("IO USE");
     cookieSessionMiddleware(socket.request, socket.request.res, next);
     if (!privateChatUsers) {
         if (socket.handshake.auth.theOderUserID) {
@@ -374,7 +377,9 @@ io.on("connection", async (socket) => {
     });
 });
 
-server.listen(3000);
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "..", "client", "index.html"));
+});
 
 server.listen(process.env.PORT || 3001, function () {
     console.log("I'm listening.");
