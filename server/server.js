@@ -310,13 +310,25 @@ app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });
 
-const io = require("socket.io")(server, {
+const httpServer = require("http").createServer(app);
+const io = require("socket.io")(httpServer, {
     allowRequest: (request, callback) =>
         callback(
             null,
             request.headers.referer.startsWith(`http://localhost:3000`)
         ),
 });
+// io.on("connection", () => {
+//     /* … */
+// });
+
+// const io = require("socket.io")(server, {
+//     allowRequest: (request, callback) =>
+//         callback(
+//             null,
+//             request.headers.referer.startsWith(`http://localhost:3000`)
+//         ),
+// });
 let privateChatUsers;
 
 io.use((socket, next) => {
@@ -379,6 +391,8 @@ io.on("connection", async (socket) => {
             });
     });
 });
+
+server.listen(3000);
 
 server.listen(process.env.PORT || 3001, function () {
     console.log("I'm listening.");
