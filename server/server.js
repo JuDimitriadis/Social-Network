@@ -169,13 +169,6 @@ app.delete("/api/upload-profile-pic", (req, res) => {
 });
 
 //API SERVING profileModal.js
-// app.get("/api/get-countries-list", (req, res) => {
-//     database.getCountriesList().then((result) => {
-//         res.json(result);
-//     });
-// });
-
-//API SERVING profileModal.js
 app.post("/api/update-profile", (req, res) => {
     console.log("req.body PROFILE UPDATE    ", req.body);
     database.updateProfile(req.body, req.session.id).then((result) => {
@@ -310,28 +303,17 @@ app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });
 
-const httpServer = require("http").createServer(app);
-const io = require("socket.io")(httpServer, {
+const io = require("socket.io")(server, {
     allowRequest: (request, callback) =>
         callback(
             null,
             request.headers.referer.startsWith(`http://localhost:3000`)
         ),
 });
-// io.on("connection", () => {
-//     /* … */
-// });
-
-// const io = require("socket.io")(server, {
-//     allowRequest: (request, callback) =>
-//         callback(
-//             null,
-//             request.headers.referer.startsWith(`http://localhost:3000`)
-//         ),
-// });
 let privateChatUsers;
 
 io.use((socket, next) => {
+    console.log("IO.USE", socket, next);
     cookieSessionMiddleware(socket.request, socket.request.res, next);
     if (!privateChatUsers) {
         if (socket.handshake.auth.theOderUserID) {
