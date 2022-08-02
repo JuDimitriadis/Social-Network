@@ -378,7 +378,7 @@ io.on("connection", async (socket) => {
                 io.emit("newSavedPrivateMsg", result);
             });
     });
-});
+}).catch((error) => console.log("Socket.IO Connectio Error", error));
 
 server.listen(process.env.PORT || 3001, function () {
     console.log("I'm listening.");
