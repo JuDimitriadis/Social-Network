@@ -310,13 +310,14 @@ const io = require("socket.io")(server, {
     allowRequest: (request, callback) =>
         callback(
             null,
-            request.headers.referer.startsWith(`http://localhost:3000`)
+            request.headers.referer.startsWith(
+                `http://localhost:3000` || `https://theexpatmom.herokuapp.com/`
+            )
         ),
 });
 let privateChatUsers;
 
 io.use((socket, next) => {
-    console.log("IO USE");
     cookieSessionMiddleware(socket.request, socket.request.res, next);
     if (!privateChatUsers) {
         if (socket.handshake.auth.theOderUserID) {
