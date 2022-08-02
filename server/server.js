@@ -33,6 +33,15 @@ app.use(express.static(path.join(__dirname, "..", "client", "public")));
 
 app.use(compression());
 
+if (process.env.NODE_ENV == "production") {
+    app.use((req, res, next) => {
+        if (req.headers["x-forwarded-proto"].startsWith("https")) {
+            return next();
+        }
+        res.redirect(`https://${req.hostname}${req.url}`);
+    });
+}
+
 app.get("/api/user/id.json", (req, res) => {
     if (!req.session.id) {
         return res.json({ success: false });
@@ -311,7 +320,7 @@ const io = require("socket.io")(server, {
         callback(
             null,
             request.headers.referer.startsWith(
-                `http://localhost:3000` || `https://theexpatmom.herokuapp.com/`
+                `https://theexpatmom.herokuapp.com/`
             )
         ),
 });
