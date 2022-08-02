@@ -55,7 +55,6 @@ app.post("/api/register", (req, res) => {
     database
         .newUser(first, last, email, password)
         .then((new_user) => {
-            // console.log(new_user, "new user");
             const newId = { id: new_user.id };
             req.session = newId;
             return res.json({ success: true });
@@ -141,7 +140,6 @@ app.post("/reset-password", (req, res) => {
 // API SERVING => app.js
 app.get("/api/get-user/data", (req, res) => {
     database.getUserById(req.session.id).then((result) => {
-        // console.log("user data", result);
         return res.json(result);
     });
 });
@@ -186,9 +184,7 @@ app.delete("/api/upload-profile-pic", (req, res) => {
 
 //API SERVING profileModal.js
 app.post("/api/update-profile", (req, res) => {
-    console.log("req.body PROFILE UPDATE    ", req.body);
     database.updateProfile(req.body, req.session.id).then((result) => {
-        console.log("result from db UPDATE", result);
         res.json(result);
     });
 });
@@ -230,7 +226,6 @@ app.get(`/api/get-other-user/:otherId`, (req, res) => {
 });
 
 app.get("/api/friendshipStatus/:otherId", (req, res) => {
-    // console.log("req.params", +req.params.otherId);
     database
         .checkFriendshipStatus(req.session.id, +req.params.otherId)
         .then((result) => {
@@ -294,23 +289,19 @@ app.post("/api/friendshipStatus", (req, res) => {
 });
 
 app.get("/api/get-friends-and-requests", (req, res) => {
-    // console.log("get friend req");
     database.getFriendsAndRequests(req.session.id).then((result) => {
-        // console.log("server get friends result", result);
         return res.json(result);
     });
 });
 
 app.get("/api/get-quote", (req, res) => {
     database.getQuote().then((result) => {
-        // console.log("quotes", result);
         return res.json(result);
     });
 });
 
 app.get("/api/get-friendsReq", (req, res) => {
     database.getFriendshipRequests(req.session.id).then((result) => {
-        // console.log("server getFriendshipRequests", result);
         return res.json(result);
     });
 });
@@ -340,9 +331,7 @@ io.use((socket, next) => {
 });
 
 io.on("connection", async (socket) => {
-    console.log("Incoming socket connection");
     if (socket.handshake.auth.theOderUserID) {
-        console.log("PRIVATE CONNECTION");
         database
             .getPrivateMessages(
                 socket.request.session.id,
@@ -354,25 +343,20 @@ io.on("connection", async (socket) => {
     }
 
     if (!socket.handshake.auth.theOderUserID) {
-        console.log("PUBLIC CONNECTION");
         database.getPublicChatMessages().then((result) => {
             socket.emit("recentPublicChatMsg", result.reverse());
         });
     }
 
     socket.on("newMsg", (msg) => {
-        console.log("newMsg server ", msg);
         database
             .createPublicChatMessage(socket.request.session.id, msg)
             .then((result) => {
-                console.log("newMsg result ", msg);
-
                 io.emit("newSavedMsg", result);
             });
     });
 
     socket.on("newPrivateMsg", (msg) => {
-        console.log("newMsg server ", msg);
         database
             .createPrivateChatMessage(
                 msg,
@@ -380,8 +364,6 @@ io.on("connection", async (socket) => {
                 socket.handshake.auth.theOderUserID
             )
             .then((result) => {
-                console.log("newMsg result ", msg);
-
                 io.emit("newSavedPrivateMsg", result);
             });
     });
